@@ -1,1 +1,34 @@
-<p>product-list works!</p>
+<!-- <p>product-list works!</p> -->
+<div class="container"><br><br>
+    <h2>Food-Products</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">Id</th> -->
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">About</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Price</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of result">
+        
+        <!-- <td>{{f.id}}</td> -->
+        <td>{{f.name}}</td>
+        <td>{{f.type}}</td>
+        <td>{{f.about}}</td>
+        <td>{{f.availability}}</td>
+        <td>{{f.price}}</td>
+        
+        <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-product/',f.id]">Update</button></td>
+        <td><button class="btn btn-secondary" (click)="deleteProduct(f.id)" >Delete</button></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>

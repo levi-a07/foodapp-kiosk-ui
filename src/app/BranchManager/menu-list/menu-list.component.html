@@ -1,0 +1,22 @@
+<!-- <p>menu-list works!</p> -->
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div *ngFor="let m of result" class="col">
+    <div class="card h-100">
+      <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Card title</h5> -->
+        <tr>
+          <!-- <td>{{m.id}}</td> -->
+          <td>{{m.name}}</td>
+        </tr>
+        <!-- <p class="card-text">
+          This is a longer card with supporting text below as a natural lead-in to
+          additional content. This content is a little bit longer.
+        </p> -->
+      </div>
+      <td><button class="btn btn-primary" type="button" [routerLink]="['/add-menu/']">Edit Menu</button></td>
+    </div>
+  </div>
+</div>
+</div>
