@@ -1,0 +1,34 @@
+<!-- <p>menu-list works!</p> -->
+<div class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let m of result" class="col">
+    <div class="card h-100">
+      <img src="https://cdn.pixabay.com/photo/2016/05/21/14/09/food-1406883__340.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+      <div class="card-body">
+        <!-- <h5 class="card-title">Card title</h5> -->
+        <tr>
+          <!-- <td>{{m.id}}</td> -->
+          <td>{{m.name}}</td>
+        </tr>  
+      </div>
+      <td><button class="btn btn-secondary" type="button" [routerLink]="['/edit-menu/', m.id]">Update Menu</button></td><br>
+      <td><button class="btn btn-secondary" (click)="deleteMenu(m.id)" >Delete</button></td>
+
+    </div>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="card h-100">
+    <img src="" class="card-img-top" alt=""/>
+    <div class="card-body">
+      <i class="fa-sharp fa-solid fa-plus" [routerLink]="['/add-menu/']"></i>
+      <h5 class="card-title">ADD MENU</h5>    
+    </div>
+  </div>
+</div>
+</div>
+
+
+

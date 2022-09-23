@@ -1,1 +1,37 @@
-<p>product-list works!</p>
+<!-- <p>product-list works!</p> -->
+<!-- <section class="vh-1000 bg-image"
+  style="background-image: url('https://cdn.pixabay.com/photo/2017/01/22/19/12/pizza-2000600_960_720.jpg');  background-size: cover;"> -->
+<div class="container"><br><br>
+    <h2>Food-Products</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">Id</th> -->
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">About</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Price</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of result">
+        
+        <!-- <td>{{f.id}}</td> -->
+        <td>{{f.name}}</td>
+        <td>{{f.type?"Veg":"Non-Veg"}}</td>
+        <td>{{f.about}}</td>
+        <td>{{f.availability}}</td>
+        <td>{{f.price}}</td>
+        
+        <td><button class="btn btn-primary" type="button" [routerLink]="['/edit-product/',f.id]">Update</button></td>
+        <td><button class="btn btn-secondary" (click)="deleteProduct(f.id)" >Delete</button></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
+<!-- </section> -->
