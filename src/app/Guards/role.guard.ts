@@ -12,7 +12,7 @@ export class RoleGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean{
    if (this.authService.isStaff()){
-console.log("accesible only to the manager");
+window.alert("accesible only to the manager");
 return true;
    }
    return false;

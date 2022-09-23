@@ -9,6 +9,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ResetACCComponent } from './reset-acc/reset-acc.component';
+import { SetNewPasswordComponent } from './set-new-password/set-new-password.component';
+import { ResetUserPassComponent } from './reset-user-pass/reset-user-pass.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { AddProductComponent } from './add-product/add-product.component';
     LoginComponent,
     RegistrationComponent,
     HomeComponent,
-    AddProductComponent
+    AddProductComponent,
+    ResetACCComponent,
+    SetNewPasswordComponent,
+    ResetUserPassComponent
   ],
   imports: [
     BrowserModule,

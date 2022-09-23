@@ -48,6 +48,7 @@ export class RegistrationComponent implements OnInit {
           if (result) {
             this.router.navigate(['']);
             localStorage.setItem('role', form.value.role);
+            
           
           } else {
             form.resetForm();

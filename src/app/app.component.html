@@ -6,13 +6,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link active"  [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
+      <a *ngIf="isloggedIn " class="nav-link active"  [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
       
-      <a *ngIf="isStaff" class="nav-link" [routerLink]="['/addProduct']" href="#">add Product</a>
-      <a  class="nav-link" [routerLink]="['/register']">Register</a>
-      <a class="nav-link" [routerLink]="['/login']" href="#">LOGIN</a>
+      <a *ngIf="!isStaff && isloggedIn" class="nav-link" [routerLink]="['/addProduct']" href="#">add Product</a>
+      <a *ngIf="!isloggedIn " class="nav-link" [routerLink]="['/register']">Register</a>
+      <a *ngIf="!isloggedIn" class="nav-link" [routerLink]="['/login']" href="#">LOGIN</a>
 
-      <a *ngIf="isloggedIn" class="nav-link " (click)="logout()">LOGOUT</a>
+      <a *ngIf="isloggedIn" style="cursor:pointer ;" class="nav-link " (click)="logout()">LOGOUT</a>
+  
     </div>
   </div>
 </nav>

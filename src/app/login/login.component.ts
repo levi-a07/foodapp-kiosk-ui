@@ -29,26 +29,32 @@ export class LoginComponent implements OnInit {
 
       const md5 = new Md5();
       form.value.password = Md5.hashStr(form.value.password).toString();
+
       this.loginservice.userLogin(form.value).subscribe(
         response => {
           console.log("login success---role--->", response);
-      
-          if (response === "branchManager" || response=== "staff"){
-    
-        localStorage.setItem('role', response);
-      this.router.navigate(['home'])
-        
-      }
+
+          if (response === "branchManager" || response === "staff") {
+
+            localStorage.setItem('role', response);
+            this.router.navigate(['home'])
+            this.loginservice.isloggedIn = this.loginservice.isUserLoggedIn();
+            this.loginservice.isstaff = this.loginservice.isStaff();
+          }
           else {
             window.alert("invalid credentials");
-        console.log("invalid credentials")
-      }
-    })
+            console.log("invalid credentials")
+          }
+        })
+    }
   }
-}
-register(){
-  this.router.navigate(['/register']);
-}
+  register() {
+    this.router.navigate(['/register']);
+  }
+  resetPassword(){
+    this.router.navigate(['/reset']);
+
+  }
 
 }
 // export class LoginComponent implements OnInit {

@@ -19,17 +19,18 @@
                        required #test 
                        #nameField="ngModel" 
                        name="name"
+                       placeholder="Your Name"
                         [class.field-error]="form.submitted && nameField.invalid"
                         [(ngModel)]="users.name" />
                       <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">
-                        Enter a name
+                        Enter valid  name
                       </div>
                       <!-- <div [hidden]="!nameField.valid || nameField.untouched" class="alert alert-danger">
                           Enter a name
                          </div>  -->
                       <!-- {{test.className}} -->
                       <!-- {{form.submitted}} -->
-                      <label class="form-label" for="name">Your Name</label>
+                      
                     </div>
                   </div>
 
@@ -38,11 +39,13 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="email" id="email" name="email" required #emailField="ngModel"
                       class="form-control"
+                      placeholder="Your Email"
+                      pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]{2,3}$"
                         [(ngModel)]="users.email" />
-                        <!-- pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]{2,3}$"  -->
-                      <label class="form-label" for="email">Your Email</label>
+                        <!--   -->
+                      
                       <div [hidden]="!form.submitted || emailField.valid" class="alert alert-danger">
-                        Enter email
+                        Enter valid email
                       </div>
                     </div>
                   </div>
@@ -50,11 +53,12 @@
                   <div class="form-group d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="password" name="password" class="form-control" #passwordField="ngModel"
+                      <input type="password" id="password" name="password" 
+                      placeholder="Password"
+                      pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" class="form-control" #passwordField="ngModel"
                         [(ngModel)]="users.password" required
                        />
-                       <!-- pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"  -->
-                      <label class="form-label" for="password">Password</label>
+                      
                       <div [hidden]="!form.submitted || passwordField.valid" class="alert alert-danger">
                         Enter correct password
                       </div>
@@ -82,9 +86,11 @@
 
 
 
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <input type="submit" class="btn btn-primary btn-lg" value="Register">
+            <div class="d-flex justify-content-center mx-4 mt-4 mb-3 mb-lg-4">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Register">
                   </div>
+         
+                  
                   <hr>
                   Already a register? <a style="border-bottom: 1px solid blue ; color: blue; cursor: pointer;" (click)="login()"> Sign in</a>
 
