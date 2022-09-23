@@ -1,7 +1,6 @@
 <!-- <p>add-product works!</p> -->
-<div class="container">
-<section class="vh-100 bg-image"
-  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="bg-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/01/22/19/12/pizza-2000600_960_720.jpg');  background-size: cover;">
+<section class="vh-100 ">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -10,15 +9,11 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Add Product</h2>
 
-              <form #addData="ngForm" (ngSubmit)="addProduct(addData)">
+              <form ngNativeValidate #addData="ngForm" (ngSubmit)="addProduct(addData)">
 
-                <!-- <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Id</label>
-                </div> -->
 
                 <div class="form-outline mb-4">
-                    <input type="text"
+                    <input required type="text"
                     class="form-control"
                     ngModel 
                     id="name" 
@@ -29,17 +24,34 @@
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text"
+                  <div required class="form-check">
+                    <input class="form-check-input" value= true type="radio" name="flexRadioDefault" ngModel 
+                    id="type" 
+                    name="type"
+                    #type ="ngModel">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Veg
+                    </label>
+                  </div>
+                  <div required class="form-check">
+                    <input class="form-check-input" value= false type="radio" name="flexRadioDefault" ngModel 
+                    id="type" 
+                    name="type"
+                    #type ="ngModel">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Non-Veg
+                    </label>
+                  </div>
+                  <!-- <input type="text"
                   class="form-control"
                   ngModel 
                   id="type" 
                   name="type"
                   #type="ngModel"
-                  placeholder="Enter the product type">
-                  <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
+                  placeholder="Enter the product type"> -->
               </div>
 
-              <div class="form-outline mb-4">
+              <div required class="form-outline mb-4">
                 <input type="text"
                 class="form-control"
                 ngModel 
@@ -50,8 +62,8 @@
                 <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
             </div>
 
-            <div class="form-outline mb-4">
-              <input type="text"
+            <div required class="form-outline mb-4">
+              <input type="number"
               class="form-control"
               ngModel 
               id="availability" 
@@ -61,32 +73,16 @@
               <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
           </div>
 
-          <div class="form-outline mb-4">
-            <input type="text"
+          <div required class="form-outline mb-4">
+            <input type="number"
             class="form-control"
             ngModel 
             id="price" 
             name="price"
             #price ="ngModel"
             placeholder="Enter the product price">
-            <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
         </div>
-
-        
-
-
-                
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-
-                <!-- <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                </div>
-
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                    class="fw-bold text-body"><u>Login here</u></a></p> -->
+                <button type="submit" class="btn btn-secondary">Submit</button>
 
               </form>
 

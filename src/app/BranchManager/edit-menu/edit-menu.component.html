@@ -1,0 +1,108 @@
+<!-- <p>edit-menu works!</p> -->
+<div class="bg-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/10/09/19/29/eat-2834549__340.jpg'); background-size: cover;">
+    <section class="vh-200 ">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-9 col-xl-10 py-5">
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">Update Menu</h2>
+    
+                  <form #editData ="ngForm" (ngSubmit)="editMenu(editData)">
+                  <div class="form-outline mb-4">
+                        <input type="text"
+                        class="form-control"
+                        ngModel 
+                        id="Menuname" 
+                        name="Menuname"
+                        #Menuname ="ngModel"
+                        [(ngModel)]= "selectedMenu.name">
+                    </div>
+                 <div class="container">
+                      <!-- <h2>Food-Products</h2> -->
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <!-- <th scope="col">Id</th> -->
+                          <th scope="col">Name</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">About</th>
+                          <th scope="col">Availability</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let p of selectedMenu.foodProducts">
+                          
+                          <!-- <td>{{f.id}}</td> -->
+                          <td>{{p.name}}</td>
+                          <td>{{p.type?"Veg":"Non-Veg"}}</td>
+                          <td>{{p.about}}</td>
+                          <td>{{p.availability}}</td>
+                          <td>{{p.price}}</td>
+                          <td><button class="btn btn-secondary" (click)="deleteProduct(p.id)" >Delete</button></td>
+                        </tr>
+                        
+                        
+                      </tbody>
+                    </table>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Update</button>
+
+                    
+                    
+                  </form>
+
+                  <div class="container"><br><br>
+                    <!-- <h2>Food-Products</h2> -->
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <!-- <th scope="col">Id</th> -->
+                          <th scope="col">Name</th>
+                          <th scope="col">Type</th>
+                          <th scope="col">About</th>
+                          <th scope="col">Availability</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Add</th>
+                          <!-- <th scope="col">Delete</th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let r of result">
+                          
+                          <!-- <td>{{f.id}}</td> -->
+                          <td>{{r.name}}</td>
+                          <td>{{r.type?"Veg":"Non-Veg"}}</td>
+                          <td>{{r.about}}</td>
+                          <td>{{r.availability}}</td>
+                          <td>{{r.price}}</td>
+                          
+                          
+                          <td><button class="btn btn-secondary" (click)="editProduct(r.id , r.name)" type="button" >Add</button></td>
+                          
+                        </tr>
+                        
+                        
+                      </tbody>
+                    </table>
+                  
+                  </div>
+                  
+                  </div>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      
+    </section>
+</div>
+
+
+
+

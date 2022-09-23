@@ -35,17 +35,6 @@ export class ProductListService {
     return this.http.delete(`http://localhost:8080/foodProducts/${id}`);
   }
 
-  getMenu()
-  {
-    return this.http.get("http://localhost:8080/menu");
-  }
-
-  addMenuList(product:any)
-  {
-    return this.http.post("http://localhost:8080/menu" , product);
-  }
-
-
-
+  
 
 }

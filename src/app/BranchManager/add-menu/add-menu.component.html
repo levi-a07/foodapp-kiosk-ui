@@ -1,36 +1,101 @@
 <!-- <p>add-menu works!</p> -->
-<div class="container">
-    <section class="vh-100 bg-image"
-      style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="bg-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/04/12/16/56/chocolates-2224998__340.jpg'); background-size: cover; ">
+    <section class="vh-200 ">
       <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="col-12 col-md-9 col-lg-9 col-xl-10 py-5">
               <div class="card" style="border-radius: 15px;">
                 <div class="card-body p-5">
                   <h2 class="text-uppercase text-center mb-5">Add Menu</h2>
     
-                  <form #addMenuList="ngForm" (ngSubmit)="addMenu(addMenuList)">
-                    <div class="form-outline mb-4">
+                  <form ngNativeValidate #addMenuList="ngForm" (ngSubmit)="addMenu(addMenuList)">
+                    <div required class="form-outline mb-4">
                         <input type="text"
                         class="form-control"
-                        ngModel 
+                        ngModel
                         id="name" 
                         name="name"
                         #name ="ngModel"
                         placeholder="Enter the Menu name">
                     </div>
-    
+
+                    <div required class="container"><br><br>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <!-- <th scope="col">Id</th> -->
+                          <th scope="col">Name</th>
+                          <!-- <th scope="col">Type</th>
+                          <th scope="col">About</th>
+                          <th scope="col">Availability</th>
+                          <th scope="col">Price</th> -->
+                          <th scope="col">Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let p of menu_obj.foodProducts">
+                          <td>{{p.name}}</td>
+                          <!-- <td>{{p.type}}</td>
+                          <td>{{p.about}}</td>
+                          <td>{{p.availability}}</td>
+                          <td>{{p.price}}</td> -->
+                          <td><button class="btn btn-secondary" (click)="deleteProduct(p.id)" >Delete</button></td>
+                        </tr>
+                        
+                        
+                      </tbody>
+                    </table>
+                    </div>
                 
-                    <button type="submit" class="btn btn-primary">Submit</button>
-    
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+
                   </form>
+
+
+                  <div required class="container"><br><br>
+                    <!-- <h2>Food-Products</h2> -->
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">About</th>
+                        <th scope="col">Availability</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Add</th>
+                        <!-- <th scope="col">Delete</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let f of result">
+                        
+                        <td>{{f.id}}</td>
+                        <td>{{f.name}}</td>
+                        <td>{{f.type?"Veg":"Non-Veg"}}</td>
+                        <td>{{f.about}}</td>
+                        <td>{{f.availability}}</td>
+                        <td>{{f.price}}</td>
+                        
+                        <td><button class="btn btn-secondary" (click)="addProduct(f.id , f.name)" type="button" >Add</button></td>
+                        <!-- <td><button class="btn btn-secondary" (click)="deleteProduct(f.id)" >Delete</button></td> -->
+                      </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+                  </div>
     
                 </div>
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </section>
-    </div>
+</div>
+
+
+

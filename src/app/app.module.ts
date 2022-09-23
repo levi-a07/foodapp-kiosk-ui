@@ -15,6 +15,7 @@ import { ShowMenuComponent } from './show-menu/show-menu.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
+import { EditMenuComponent } from './BranchManager/edit-menu/edit-menu.component';
 
 
 
@@ -31,7 +32,8 @@ import { MenuListComponent } from './BranchManager/menu-list/menu-list.component
     EditProductComponent,
     AddMenuComponent,
     ShowMenuComponent,
-    MenuListComponent
+    MenuListComponent,
+    EditMenuComponent
   ],
   imports: [
     BrowserModule,

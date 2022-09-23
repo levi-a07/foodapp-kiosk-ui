@@ -1,4 +1,6 @@
 <!-- <p>product-list works!</p> -->
+<!-- <section class="vh-1000 bg-image"
+  style="background-image: url('https://cdn.pixabay.com/photo/2017/01/22/19/12/pizza-2000600_960_720.jpg');  background-size: cover;"> -->
 <div class="container"><br><br>
     <h2>Food-Products</h2>
 <table class="table">
@@ -19,7 +21,7 @@
         
         <!-- <td>{{f.id}}</td> -->
         <td>{{f.name}}</td>
-        <td>{{f.type}}</td>
+        <td>{{f.type?"Veg":"Non-Veg"}}</td>
         <td>{{f.about}}</td>
         <td>{{f.availability}}</td>
         <td>{{f.price}}</td>
@@ -32,3 +34,4 @@
     </tbody>
   </table>
 </div>
+<!-- </section> -->
