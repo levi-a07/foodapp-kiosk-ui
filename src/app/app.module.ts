@@ -7,13 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProductListComponent } from './BranchManager/product-list/product-list.component';
 import { PaymentComponent } from './create-order/payment/payment.component';
+import { ShowMenuComponent } from './create-order/show-menu/show-menu.component';
 import { AddProductComponent } from './BranchManager/add-product/add-product.component';
 import { EditProductComponent } from './BranchManager/edit-product/edit-product.component';
 import { AddMenuComponent } from './BranchManager/add-menu/add-menu.component';
-import { ShowMenuComponent } from './create-order/show-menu/show-menu.component';
-import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
+import { EditMenuComponent } from './BranchManager/edit-menu/edit-menu.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { SpinnerComponent } from './spinner/spinner.component';
     EditProductComponent,
     AddMenuComponent,
     ShowMenuComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    MenuListComponent,
+    EditMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule  
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
