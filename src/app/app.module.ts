@@ -6,9 +6,21 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
-import { HttpClientModule } from '@angular/common/http';
+
 import { HomeComponent } from './home/home.component';
-import { AddProductComponent } from './add-product/add-product.component';
+
+import { ProductListComponent } from './BranchManager/product-list/product-list.component';
+import { PaymentComponent } from './create-order/payment/payment.component';
+import { ShowMenuComponent } from './create-order/show-menu/show-menu.component';
+import { AddProductComponent } from './BranchManager/add-product/add-product.component';
+import { EditProductComponent } from './BranchManager/edit-product/edit-product.component';
+import { AddMenuComponent } from './BranchManager/add-menu/add-menu.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
+import { EditMenuComponent } from './BranchManager/edit-menu/edit-menu.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+
 import { ResetACCComponent } from './reset-acc/reset-acc.component';
 import { SetNewPasswordComponent } from './set-new-password/set-new-password.component';
 import { ResetUserPassComponent } from './reset-user-pass/reset-user-pass.component';
@@ -18,17 +30,26 @@ import { ResetUserPassComponent } from './reset-user-pass/reset-user-pass.compon
     AppComponent,
     LoginComponent,
     RegistrationComponent,
+
     HomeComponent,
-    AddProductComponent,
     ResetACCComponent,
     SetNewPasswordComponent,
-    ResetUserPassComponent
+    ResetUserPassComponent,
+    ProductListComponent,
+    PaymentComponent,
+    AddProductComponent,
+    EditProductComponent,
+    AddMenuComponent,
+    ShowMenuComponent,
+    SpinnerComponent,
+    MenuListComponent,
+    EditMenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

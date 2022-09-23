@@ -1,0 +1,91 @@
+<!-- <p>edit-product works!</p> -->
+<div class="container">
+    <section class="vh-100 bg-image"
+      style="background-image: url('https://cdn.pixabay.com/photo/2018/01/03/06/19/sugar-3057660_960_720.jpg');background-size: cover;">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">Update Product</h2>
+    
+                  <form #editData="ngForm" (ngSubmit)="editProduct(editData)">
+                    <div class="form-outline mb-4">
+                      <input type="text"
+                      class="form-control"
+                      ngModel 
+                      id="id" 
+                      name="id"
+                      #id ="ngModel"
+                      [(ngModel)]="selectedProduct.id">
+                  </div>
+
+
+                    <div class="form-outline mb-4">
+                        <input type="text"
+                        class="form-control"
+                        ngModel 
+                        id="name" 
+                        name="name"
+                        #name ="ngModel"
+                        [(ngModel)]="selectedProduct.name">
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text"
+                        class="form-control"
+                        ngModel 
+                        id="type" 
+                        name="type"
+                        #type ="ngModel"
+                        [(ngModel)]="selectedProduct.type">
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text"
+                        class="form-control" 
+                        ngModel
+                        id="about" 
+                        name="about"
+                        #about ="ngModel"
+                        [(ngModel)]="selectedProduct.about">
+                        
+                        <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text"
+                        class="form-control" 
+                        ngModel
+                        id="availability" 
+                        name="availability"
+                        #availability ="ngModel"
+                        [(ngModel)]="selectedProduct.availability">
+                        
+                        <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text"
+                        class="form-control"
+                        ngModel 
+                        id="price" 
+                        name="price"
+                        #price ="ngModel"
+                        [(ngModel)]="selectedProduct.price">
+                        
+                        <!-- <label class="form-label" for="form3Example1cg">Name</label> -->
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+    
+                  </form>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>

@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col-md-2" style="text-align:right; padding-top: 6%; position:sticky">
+    <div id="scrollspy1" class="sticky-top">
+      <ul class="nav flex-column ps-3 nav-pills menu-sidebar">
+        <li class="nav-item" *ngFor="let menu of menulist">
+          <a class="nav-link display-6 scrollspycust myclass" href="#{{menu.name}}">{{menu.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-7 border" >
+    <div data-mdb-spy="scroll" data-mdb-target="#scrollspy-collapsible" data-mdb-offset="0" class="scrollspy-example">
+      <section *ngFor="let menu of menulist" id={{menu.name}} class="py-3">
+        <h1 class="display-4">{{menu.name}}</h1>
+        <hr>
+        <div class="container py-3" *ngFor="let product of menu.foodProducts">
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-xl-10">
+              <div class="card shadow-6 rounded-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="https://cdn.pixabay.com/photo/2022/06/27/05/38/spices-7286739_960_720.jpg"
+                          class="w-100" />
+                        <a href="#!">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5>{{product.name}}</h5>
+                      <div class="mt-1 mb-0 text-muted small">
+                        <img *ngIf="!product.type" src="https://img.icons8.com/color/20/000000/non-vegetarian-food-symbol.png" />
+                        <img *ngIf="product.type" src="https://img.icons8.com/color/20/000000/vegetarian-food-symbol.png" />
+                      </div>
+                      <div class="mb-2 text-muted small">
+                        <span>{{product.about}}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-row align-items-center mb-1">
+                        <h4 class="mb-1 me-1">{{product.price}} <small>&#x20b9;</small></h4>
+                      </div>
+                      <h6 class="text-success" *ngIf=product.availability >10% Discount</h6>
+                      <h6 class="text-danger" *ngIf=!(product.availability)>Out-of-stock</h6>
+                      <div class="d-flex flex-column mt-4">
+                        <button class="btn btn-primary btn-sm gradient-custom" *ngIf="product.availability" type="button" id={{product.id}}
+                          (click)="addItem(product)">ADD</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Spied element -->
+  </div>
+  <div class="col-md-3">
+    <div *ngIf="!orderflag" class="sticky-top py-3">
+      <div class="display-6" style="margin-top:20px">Cart is empty</div>
+      <hr>
+      <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2"
+        style="opacity:.5;" class="py-3" width="350px">
+      <div>Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
+    </div>
+
+    <div *ngIf="orderflag" class="sticky-top py-3">
+      <div class="display-6" style="margin-top:20px">Cart</div>
+      <hr>
+      <section class="h-100">
+        <div class="container h-100 py-5">
+          <div class="row d-flex justify-content-center align-items-center">
+            <form ngNativeValidate #orderData = "ngForm" (ngSubmit)="saveOrder()">
+              <div>
+                <div class="card rounded-3 mb-2" *ngFor="let i of order.items">
+                  <div class="card-body">
+                    <div class="row d-flex justify-content-between align-items-center">
+                      <div class="col-md-4">
+                        <h6 style="margin-top:11px ;">{{map.get(i.productId)[0]}}</h6>
+                      </div>
+                      <div class="col-md-3 d-flex">
+                        <input [(ngModel)]=i.quantity [ngModelOptions]="{standalone:true}" type="number"
+                          class="form-control px-2"  min="1" [max]=map.get(i.productId)[2] style="margin-top:2px ;" />
+                      </div>
+                      <div class="col-md-4">
+                        <h6 style="margin-top:11px;" id="itemprice">&#x20b9; {{(map.get(i.productId)[1] * i.quantity).toFixed(2)}}</h6>
+                      </div>
+                      <div class="col-md-1 px-2">
+                        <a class="text-danger"><i class="fas fa-trash fa-lg" (click)="removeItem(i)"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <p style="font-size:small;">Order total: &#x20b9;{{(order.totalPrice).toFixed(2)}} <br>
+                      Taxes and charges: &#x20b9;{{(order.totalPrice * 18/100).toFixed(2)}} 
+                    </p>
+                    <h5 style="padding-bottom:10px;">Total: &#x20b9;{{(order.totalPrice + order.totalPrice*18/100).toFixed(2)}}
+                    </h5>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg gradient-custom">Proceed to Pay</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
