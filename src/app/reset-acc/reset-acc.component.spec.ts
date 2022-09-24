@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddMenuComponent } from './add-menu.component';
+import { ResetACCComponent } from './reset-acc.component';
 
-describe('AddMenuComponent', () => {
-  let component: AddMenuComponent;
-  let fixture: ComponentFixture<AddMenuComponent>;
+describe('ResetACCComponent', () => {
+  let component: ResetACCComponent;
+  let fixture: ComponentFixture<ResetACCComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddMenuComponent ]
+      declarations: [ ResetACCComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddMenuComponent);
+    fixture = TestBed.createComponent(ResetACCComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
