@@ -1,17 +1,16 @@
-<div class="row">
-  <div class="col-md-2" style="text-align:right; padding-top: 6%; position:sticky">
-    <div id="scrollspy1" class="sticky-top">
-      <ul class="nav flex-column ps-3 nav-pills menu-sidebar">
+<div class="container-fluid row">
+  <div class="col-md-2" style="text-align:right; padding-top: 6%; position:sticky;">
+    <div id="scrollspy1" class="sticky-top py-5">
+      <ul class="nav flex-column ps-3 nav-pills menu-sidebar py-3">
         <li class="nav-item" *ngFor="let menu of menulist">
           <a class="nav-link display-6 scrollspycust myclass" href="#{{menu.name}}">{{menu.name}}</a>
         </li>
       </ul>
     </div>
   </div>
-
-  <div class="col-md-7 border" >
-    <div data-mdb-spy="scroll" data-mdb-target="#scrollspy-collapsible" data-mdb-offset="0" class="scrollspy-example">
-      <section *ngFor="let menu of menulist" id={{menu.name}} class="py-3">
+  <div class="col-md-7 border py-2" >
+    <div data-mdb-spy="scroll" data-mdb-target="#scrollspy-collapsible" data-mdb-offset="10" class="scrollspy-example">
+      <section *ngFor="let menu of menulist" id={{menu.name}} class="py-5">
         <h1 class="display-4">{{menu.name}}</h1>
         <hr>
         <div class="container py-3" *ngFor="let product of menu.foodProducts">
@@ -57,10 +56,9 @@
         </div>
       </section>
     </div>
-    <!-- Spied element -->
   </div>
   <div class="col-md-3">
-    <div *ngIf="!orderflag" class="sticky-top py-3">
+    <div *ngIf="!orderflag" class="sticky-top py-5">
       <div class="display-6" style="margin-top:20px">Cart is empty</div>
       <hr>
       <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2"
@@ -112,3 +110,4 @@
       </section>
     </div>
   </div>
+</div>

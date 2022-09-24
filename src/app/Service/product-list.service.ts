@@ -26,7 +26,7 @@ export class ProductListService {
 
   updateData(product:any)
   {
-    return this.http.put(`http://localhost:8080/foodProducts`,product);
+    return this.http.put("http://localhost:8080/foodProducts",product);
   }
 
   deleteData(id:any)

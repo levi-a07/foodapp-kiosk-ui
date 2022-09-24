@@ -8,6 +8,7 @@ import { EditMenuComponent } from './BranchManager/edit-menu/edit-menu.component
 import { EditProductComponent } from './BranchManager/edit-product/edit-product.component';
 import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
 import { ProductListComponent } from './BranchManager/product-list/product-list.component';
+import { OrderListComponent } from './BranchManager/order-list/order-list.component';
 
 const routes: Routes = [
   {path : "product-list" , component:ProductListComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path : "menu-list" , component: MenuListComponent},
   {path : "edit-menu/:id" , component : EditMenuComponent},
   { path: '', component: ShowMenuComponent },
-  { path: 'payment', component: PaymentComponent }
+  { path: 'payment', component: PaymentComponent },
+  {path:'order-list', component:OrderListComponent}
 ];
 
 @NgModule({

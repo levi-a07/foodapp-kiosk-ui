@@ -18,4 +18,10 @@ export class OrderService {
   saveOrder(order:any){
     return this.http.post('http://localhost:8080/order',order)
   }
+  getOrders(){
+    return this.http.get('http://localhost:8080/order');
+  }
+  updateStatus(order:any){
+    return this.http.put('http://localhost:8080/order',order);
+  }
 }

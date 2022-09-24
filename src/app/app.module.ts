@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
 import { EditMenuComponent } from './BranchManager/edit-menu/edit-menu.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { OrderListComponent } from './BranchManager/order-list/order-list.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     ShowMenuComponent,
     SpinnerComponent,
     MenuListComponent,
-    EditMenuComponent
+    EditMenuComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
