@@ -11,14 +11,15 @@ import { AuthService } from '../Service/auth.service';
 export class ResetACCComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router) { }
-
+loading :boolean=false;
   ngOnInit(): void {
   }
 
   resetLink(form:NgForm){
-
+    this.loading=true;
     this.auth.resetLink(form.value.email).subscribe(
       result => {
+        this.loading=false;
 if(result){ 
         console.log(result); 
         this.router.navigate(['/verify']);
