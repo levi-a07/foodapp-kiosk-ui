@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './Guards/auth.guard';
 import { RoleGuard } from './Guards/role.guard';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ResetACCComponent } from './reset-acc/reset-acc.component';
@@ -18,6 +17,7 @@ import { EditProductComponent } from './BranchManager/edit-product/edit-product.
 import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
 import { ProductListComponent } from './BranchManager/product-list/product-list.component';
 import { AddProductComponent } from './BranchManager/add-product/add-product.component';
+import { OrderListComponent } from './BranchManager/order-list/order-list.component';
 
 const routes: Routes = [
   { path: '', component: ShowMenuComponent, canActivate: [AuthGuard] },
@@ -37,8 +37,7 @@ const routes: Routes = [
   { path: "add-menu", component: AddMenuComponent, canActivate: [AuthGuard, RoleGuard] },
   { path: "menu-list", component: MenuListComponent, canActivate: [AuthGuard, RoleGuard] },
   { path: "edit-menu/:id", component: EditMenuComponent, canActivate: [AuthGuard, RoleGuard] },
-
-
+  { path: "orders", component:OrderListComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

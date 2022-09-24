@@ -33,11 +33,12 @@ export class PaymentComponent implements OnInit {
   }
   saveOrder(dat:any){
     let date:Date = new Date();
-    this.order.orderDeliveryTime = this.addHours(date,20).toString();
+    this.order.status = false
+    this.order.orderDeliveryTime = "YET TO DELIVER"
     this.order.orderCreatedTime = date.toString();
     this.loading = true;
     this.orderService.saveOrder(this.order).subscribe((data)=>{
-      this.loading = false
+      this.loading = false;
       window.alert("Order saved sucessfully");
       this.router.navigate(['']);
     });

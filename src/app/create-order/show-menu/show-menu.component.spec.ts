@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ResetUserPassComponent } from './reset-user-pass.component';
+import { ResetUserPassComponent } from '../../reset-user-pass/reset-user-pass.component';
 
 describe('ResetUserPassComponent', () => {
   let component: ResetUserPassComponent;

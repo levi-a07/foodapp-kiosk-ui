@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuListComponent } from './BranchManager/menu-list/menu-list.component';
 import { EditMenuComponent } from './BranchManager/edit-menu/edit-menu.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { OrderListComponent } from './BranchManager/order-list/order-list.component';
 
 import { ResetACCComponent } from './reset-acc/reset-acc.component';
 import { SetNewPasswordComponent } from './set-new-password/set-new-password.component';
@@ -43,7 +44,8 @@ import { ResetUserPassComponent } from './reset-user-pass/reset-user-pass.compon
     ShowMenuComponent,
     SpinnerComponent,
     MenuListComponent,
-    EditMenuComponent
+    EditMenuComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

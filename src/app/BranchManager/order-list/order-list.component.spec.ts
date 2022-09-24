@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResetACCComponent } from '../../reset-acc/reset-acc.component';
+import { OrderListComponent } from './order-list.component';
 
-describe('ResetACCComponent', () => {
-  let component: ResetACCComponent;
-  let fixture: ComponentFixture<ResetACCComponent>;
+describe('OrderListComponent', () => {
+  let component: OrderListComponent;
+  let fixture: ComponentFixture<OrderListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResetACCComponent ]
+      declarations: [ OrderListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ResetACCComponent);
+    fixture = TestBed.createComponent(OrderListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

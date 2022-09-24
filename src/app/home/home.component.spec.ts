@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-<<<<<<<< HEAD:src/app/home/home.component.spec.ts
 import { HomeComponent } from './home.component';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -14,13 +13,11 @@ describe('HomeComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
-========
-import { SpinnerComponent } from './spinner.component';
-
+  });
+});
 describe('SpinnerComponent', () => {
   let component: SpinnerComponent;
   let fixture: ComponentFixture<SpinnerComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SpinnerComponent ]
@@ -28,7 +25,6 @@ describe('SpinnerComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(SpinnerComponent);
->>>>>>>> e6c9d092434c248a6366cf9e77b6b6a7a7ad9771:src/app/spinner/spinner.component.spec.ts
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -37,3 +33,4 @@ describe('SpinnerComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
