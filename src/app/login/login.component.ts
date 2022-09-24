@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           if (response === "branchManager" || response === "staff") {
 
             localStorage.setItem('role', response);
-            this.router.navigate(['home'])
+            this.router.navigate([''])
             this.loginservice.isloggedIn = this.loginservice.isUserLoggedIn();
             this.loginservice.isstaff = this.loginservice.isStaff();
           }

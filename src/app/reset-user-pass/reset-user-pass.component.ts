@@ -18,11 +18,12 @@ export class ResetUserPassComponent implements OnInit {
 
   matchPass(form: NgForm) {
     if (form.value.pass === form.value.cpass) {
+      this.hidden=false;
       const md5 = new Md5();
       form.value.pass = Md5.hashStr(form.value).toString();
       this.auth.setPass(form.value).subscribe(
         result => {
-
+          
           console.log("strings matched  ", result);
           this.router.navigate(['login']);
 //479585518
@@ -31,6 +32,7 @@ export class ResetUserPassComponent implements OnInit {
       )
     }
     else{
+      this.hidden=true;
  console.log("not matched ");
     }
   }

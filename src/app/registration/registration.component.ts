@@ -21,6 +21,8 @@ export class RegistrationComponent implements OnInit {
   }
   postError = false;
   postErrorMessage = '';
+
+  showPassword:boolean=false;
   //copy of data
   users: Users = { ...this.orginalusers };
   constructor(private authService: AuthService, private router: Router) {
@@ -28,6 +30,8 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    console.log("test starts")
   }
 
   onHttpError(errorResponse: any) {
@@ -42,13 +46,15 @@ export class RegistrationComponent implements OnInit {
     if (form.valid) {
 
       const md5 = new Md5();
+      console.log(form.value)
       form.value.password = Md5.hashStr(form.value.password).toString();
       this.authService.saveUser(form.value).subscribe(
         result => {
           if (result) {
-            this.router.navigate(['']);
+            console.log("registered")
+             this.router.navigate(['']);
             localStorage.setItem('role', form.value.role);
-            
+           
           
           } else {
             form.resetForm();

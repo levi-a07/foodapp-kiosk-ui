@@ -7,7 +7,7 @@ import { ProductListService } from 'src/app/Service/product-list.service';
 @Component({
   selector: 'app-add-menu',
   templateUrl: './add-menu.component.html',
-  styleUrls: ['./add-menu.component.css']
+  styleUrls: ['././add-menu.component.css']
 })
 export class AddMenuComponent implements OnInit {
   result:any =[];
