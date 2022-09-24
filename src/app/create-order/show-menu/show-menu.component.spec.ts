@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowMenuComponent } from './show-menu.component';
+import { ResetUserPassComponent } from './reset-user-pass.component';
 
-describe('ShowMenuComponent', () => {
-  let component: ShowMenuComponent;
-  let fixture: ComponentFixture<ShowMenuComponent>;
+describe('ResetUserPassComponent', () => {
+  let component: ResetUserPassComponent;
+  let fixture: ComponentFixture<ResetUserPassComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowMenuComponent ]
+      declarations: [ ResetUserPassComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ShowMenuComponent);
+    fixture = TestBed.createComponent(ResetUserPassComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
