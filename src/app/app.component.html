@@ -19,7 +19,7 @@
         <a *ngIf="isloggedIn"  class="nav-link" routerLink="orders" href="#">Orders</a>
       </li>  
       <li><a *ngIf="!isloggedIn" class="nav-link" [routerLink]="['/register']">Register</a></li>
-      <li><a *ngIf="!isloggedIn" class="nav-link" [routerLink]="['/login']" href="#">LOGIN</a></li>
+      <li><a *ngIf="!isloggedIn" class="nav-link" [routerLink]="['/login']" href="#">Login</a></li>
       <li><a *ngIf="isloggedIn" style="cursor:pointer ;" class="nav-link " (click)="logout()"><button class="btn btn-outline-danger" style="left:90%; position:fixed;">Logout</button></a></li>
     </ul>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuListService } from 'src/app/Service/menu-list.service';
 import { ProductListService } from 'src/app/Service/product-list.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductListService } from 'src/app/Service/product-list.service';
 })
 export class ProductListComponent implements OnInit {
   result :any = [];
-  constructor(private foodproducts: ProductListService, private router: Router) { }
+  constructor(private foodproducts: ProductListService,private menu:MenuListService ,private router: Router) { }
 
   ngOnInit(): void {
     this.foodproducts.getData().subscribe((data)=>{
@@ -22,13 +23,10 @@ export class ProductListComponent implements OnInit {
   deleteProduct(id:any)
   {
     this.foodproducts.deleteData(id).subscribe((res)=>{
-      console.log(res);
       this.router.navigate(['/product-list']);
       this.foodproducts.getData().subscribe((data)=>{
         this.result=data;
       })
-      
-      
     })
   }
 }

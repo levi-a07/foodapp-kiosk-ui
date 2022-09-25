@@ -61,7 +61,8 @@
                                                                     <tr *ngFor="let item of tempitem">
                                                                         <td>{{item.id}}</td>
                                                                         <td class="tds">{{item.productId}}</td>
-                                                                        <td>{{productlist.get(item.productId)}}</td>
+                                                                        <td *ngIf="productlist.get(item.productId)">{{productlist.get(item.productId)}}</td>
+                                                                        <td *ngIf="!productlist.get(item.productId)">DELETED PRODUCT</td>
                                                                         <td class="tds">{{item.quantity}}</td>
                                                                     </tr>
                                                                 </tbody>
