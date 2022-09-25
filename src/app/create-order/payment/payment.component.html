@@ -1,0 +1,69 @@
+<section style="background-color: #eee; overflow-y: scroll;">
+    <div class="container py-5" style="margin-top:30px;">
+        <div class="card">
+            <div class="card-body">
+                <div class="row d-flex justify-content-center pb-5">
+                    <div class="col-md-7 col-xl-5 mb-4 mb-md-0">
+                        <div class="py-4 d-flex flex-row">
+                            <h5><span class="far fa-check-square pe-2"></span><b>ORDER CONFIRMATION</b></h5>
+                        </div>
+                        <form ngNativeValidate #data="ngForm" (ngSubmit)="saveOrder(data)">
+                            <div class="mb-4">
+                                <input type="text" required minlength="3" maxlength="20" id="cname" name="cname" placeholder="Customer name"
+                                    class="form-control form-control-lg"
+                                    ngModel
+                                    [(ngModel)]="order.customerName"
+                                    [ngModelOptions]="{standalone:true}"
+                                    />
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="mail" name="mail" placeholder="Email"
+                                    class="form-control form-control-lg"
+                                    ngModel
+                                    [(ngModel)]="order.contactNumber"
+                                    [ngModelOptions]="{standalone:true}"/>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit"
+                                    class="btn btn-primary btn-block btn-lg gradient-custom">PLACE ORDER</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 col-xl-4 offset-xl-1">
+                        <div class="py-4 d-flex justify-content-end">
+                            <h6><a href="#!">Cancel and return to menu</a></h6>
+                        </div>
+                        <div class="rounded d-flex flex-column p-2" style="background-color: #f8f9fa;">
+                            <div class="p-2 me-3">
+                                <h4>Order Recap</h4>
+                            </div>
+                            <div class="p-2 d-flex" *ngFor="let item of order.items">
+                                <div class="col-6">{{map.get(item.productId)}}</div>
+                                <div class="col-3">{{item.quantity}}</div>
+                                <div class="ms-auto">&#x20b9; {{item.price.toFixed(2)}}</div>
+                            </div>
+                            <div class="border-top px-2 mx-2"></div>
+                            <div class="p-2 d-flex pt-3">
+                                <div class="col-8">Order total</div>
+                                <div class="ms-auto"><b>&#x20b9; {{(order.totalPrice).toFixed(2)}}</b></div>
+                            </div>
+                            <div class="p-2 d-flex">
+                                <div class="col-8">
+                                    Taxes and charges <span class="fa fa-question-circle text-dark"></span>
+                                </div>
+                                <div class="ms-auto"><b>&#x20b9; {{(order.totalPrice * 18 / 100).toFixed(2)}}</b></div>
+                            </div>
+                            <div class="border-top px-2 mx-2"></div>
+                            <div class="p-2 d-flex pt-3">
+                                <div class="col-8"><b>Total</b></div>
+                                <div class="ms-auto"><b class="text-success">&#x20b9; {{(order.totalPrice +
+                                        order.totalPrice * 18 / 100).toFixed(2)}}</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-spinner *ngIf="loading"></app-spinner>

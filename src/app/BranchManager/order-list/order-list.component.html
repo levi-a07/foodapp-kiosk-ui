@@ -1,0 +1,87 @@
+<div
+    style="background-image: url(https://cdn.pixabay.com/photo/2017/10/09/19/29/eat-2834549__340.jpg); background-size:contain; margin-top:30px;">
+    <section>
+        <div class="d-flex align-items-center py-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-9 col-lg-9 col-xl-10">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="container"><br><br>
+                                <h2 class="display-4">Food orders</h2>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">CustomerName</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Order Created at</th>
+                                            <th scope="col">Order Delivered at</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col" class="tds">Items</th>
+                                            <th scope="col" class="tds">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let order of orderlist">
+                                            <td>{{order.id}}</td>
+                                            <td>{{order.customerName}}</td>
+                                            <td>{{order.contactNumber}}</td>
+                                            <td>{{order.orderCreatedTime}}</td>
+                                            <td>{{order.orderDeliveryTime}}</td>
+                                            <td>{{order.totalPrice}}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-secondary" data-mdb-toggle="modal"
+                                                    data-mdb-target="#exampleModal" (click)="updateItem(order.id)">Items</button>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-danger" *ngIf=!order.status
+                                                    (click)="updateStatus(order)">Done</button>
+                                                <p *ngIf=order.status class="text-success"><strong>Delivered</strong></p>
+                                            </td>
+                                            
+                                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title display-6" id="exampleModalLabel">Items in this order</h5>
+                                                            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Id</th>
+                                                                        <th class="tds">Product Id</th>
+                                                                        <th>Name</th>
+                                                                        <th class="tds">Quantity</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr *ngFor="let item of tempitem">
+                                                                        <td>{{item.id}}</td>
+                                                                        <td class="tds">{{item.productId}}</td>
+                                                                        <td *ngIf="productlist.get(item.productId)">{{productlist.get(item.productId)}}</td>
+                                                                        <td *ngIf="!productlist.get(item.productId)">DELETED PRODUCT</td>
+                                                                        <td class="tds">{{item.quantity}}</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

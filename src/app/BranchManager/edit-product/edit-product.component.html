@@ -1,1 +1,56 @@
-<p>edit-product works!</p>
+<!-- <p>edit-product works!</p> -->
+<div>
+  <section class="vh-100 bg-image"
+    style="background-image: url('https://cdn.pixabay.com/photo/2018/01/03/06/19/sugar-3057660_960_720.jpg');background-size: cover;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="display-6 text-center mb-5">Update Product</h2>
+                <form #editData="ngForm" (ngSubmit)="editProduct()">
+                  <div class="mb-4">
+                    <input type="text" class="form-control" ngModel id="name" name="name" #name="ngModel"
+                      [(ngModel)]="selectedProduct.name" placeholder="Product name">
+                  </div>
+                  <div class="mb-4">
+                    <div required class="form-check">
+                      <input class="form-check-input" type="radio" ngModel id="itemtypeveg"
+                        name="itemtypeveg" #itemtypeveg="ngModel" [(ngModel)]=selectedProduct.type value=true >
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Veg
+                      </label>
+                    </div>
+                    <div required class="form-check">
+                      <input class="form-check-input" type="radio" ngModel id="itemtypenon"
+                        name="itemtypenon" #itemtypenon="ngModel" [(ngModel)]=selectedProduct.type value=false>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Non-Veg
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <input type="text" class="form-control" ngModel id="about" name="about" #about="ngModel"
+                      [(ngModel)]="selectedProduct.about" placeholder="About">
+                  </div>
+
+                  <div class="mb-4">
+                    <input type="text" class="form-control" ngModel id="availability" name="availability"
+                      #availability="ngModel" [(ngModel)]="selectedProduct.availability" placeholder="Availability">
+                  </div>
+
+                  <div class="mb-4">
+                    <input type="text" class="form-control" ngModel id="price" name="price" #price="ngModel"
+                      [(ngModel)]="selectedProduct.price" placeholder="Price">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
